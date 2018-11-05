@@ -14,7 +14,7 @@ public class Selenium2ExampleTest {
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
-        System.setProperty("webdriver.gecko.driver","/home/jqlowry/IdeaProjects/Selenium/geckodriver");
+        System.setProperty("webdriver.gecko.driver","/usr/local/geckodriver");
         WebDriver driver = new FirefoxDriver();
 
         // And now use this to visit Google
