@@ -20,7 +20,7 @@ public class Selenium2ExampleTest {
         //System.setProperty("webdriver.gecko.driver","/home/jqlowry/IdeaProjects/Selenium/geckodriver");
         //File firefoxPathBinary = new File("/usr/local/geckodriver");
         System.setProperty("webdriver.gecko.driver", "/usr/local/geckodriver");
-
+        System.out.println(System.getProperty("webdriver.gecko.driver"));
 
         WebDriver driver = new FirefoxDriver();
 
