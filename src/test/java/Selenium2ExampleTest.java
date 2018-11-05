@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class Selenium2ExampleTest {
     @Test
     public static void testCallCheese() {
@@ -14,7 +16,11 @@ public class Selenium2ExampleTest {
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
-        System.setProperty("webdriver.gecko.driver","/usr/local/geckodriver");
+
+        //System.setProperty("webdriver.gecko.driver","/home/jqlowry/IdeaProjects/Selenium/geckodriver");
+        File firefoxPathBinary = new File("/usr/local/firefox//firefox-bin");
+        System.setProperty("webdriver.firefox.bin", firefoxPathBinary.getAbsolutePath());
+
         WebDriver driver = new FirefoxDriver();
 
         // And now use this to visit Google
