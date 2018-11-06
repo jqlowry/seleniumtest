@@ -3,24 +3,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-
-public class Selenium2ExampleTest {
+public class SeleniumChromeExampleTest {
     @Test
-    public static void testCallCheese() {
-        System.out.println("Testing Firefox");
+    public static void testCallJuice() {
+        System.out.println("Testing Chrome");
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
 
-        System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
-        System.out.println(System.getProperty("webdriver.gecko.driver"));
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.out.println(System.getProperty("webdriver.chrome.driver"));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new ChromeDriver(options);
 
         //WebDriver driver = new HtmlUnitDriver();
         // And now use this to visit Google
@@ -32,7 +33,7 @@ public class Selenium2ExampleTest {
         WebElement element = driver.findElement(By.name("q"));
 
         // Enter something to search for
-        element.sendKeys("Cheese!");
+        element.sendKeys("Juice!");
 
         // Now submit the form. WebDriver will find the form for us from the element
         element.submit();
@@ -44,7 +45,7 @@ public class Selenium2ExampleTest {
         // Wait for the page to load, timeout after 10 seconds
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getTitle().toLowerCase().startsWith("cheese!");
+                return d.getTitle().toLowerCase().startsWith("juice!");
             }
         });
 
@@ -53,5 +54,6 @@ public class Selenium2ExampleTest {
 
         //Close the browser
         driver.close();
+
     }
 }
