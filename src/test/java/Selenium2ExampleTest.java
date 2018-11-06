@@ -17,8 +17,6 @@ public class Selenium2ExampleTest {
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
 
-        //System.setProperty("webdriver.gecko.driver","/home/jqlowry/IdeaProjects/Selenium/geckodriver");
-        //File firefoxPathBinary = new File("/usr/local/geckodriver");
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
         System.out.println(System.getProperty("webdriver.gecko.driver"));
 
