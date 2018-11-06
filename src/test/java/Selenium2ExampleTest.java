@@ -24,6 +24,7 @@ public class Selenium2ExampleTest {
 
         WebDriver driver = new FirefoxDriver();
 
+        //WebDriver driver = new HtmlUnitDriver();
         // And now use this to visit Google
         driver.get("http://www.google.com");
         // Alternatively the same thing can be done like this
@@ -53,11 +54,6 @@ public class Selenium2ExampleTest {
         System.out.println("Page title is: " + driver.getTitle());
 
         //Close the browser
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         driver.quit();
     }
 }
