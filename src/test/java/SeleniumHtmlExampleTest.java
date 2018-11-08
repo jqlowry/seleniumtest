@@ -17,7 +17,7 @@ public class SeleniumHtmlExampleTest {
         java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
 
         System.out.println("********************");
-        System.out.println("*   Testing HTML");
+        System.out.println("*  Begin Testing HTML");
         System.out.println("********************");
         // Create a new instance of the HTML driver
         // Notice that the remainder of the code relies on the interface,
@@ -68,6 +68,10 @@ public class SeleniumHtmlExampleTest {
 
         //Close the browser
         driver.quit();
-
+        System.out.println("********************");
+        System.out.println("*  End Testing HTML");
+        System.out.println("********************");
+        System.out.println();
+        System.out.println();
     }
 }

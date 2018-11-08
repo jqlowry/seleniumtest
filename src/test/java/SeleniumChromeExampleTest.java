@@ -12,7 +12,7 @@ public class SeleniumChromeExampleTest {
     @Test
     public static void testCallJuice() {
         System.out.println("********************");
-        System.out.println("*   Testing Chrome");
+        System.out.println("*   Begin Testing Chrome");
 
         // Create a new instance of the Chrome driver
         // Notice that the remainder of the code relies on the interface,
@@ -61,6 +61,10 @@ public class SeleniumChromeExampleTest {
 
         //Close the browser
         driver.quit();
-
+        System.out.println("********************");
+        System.out.println("*   End Testing Chrome");
+        System.out.println("********************");
+        System.out.println();
+        System.out.println();
     }
 }

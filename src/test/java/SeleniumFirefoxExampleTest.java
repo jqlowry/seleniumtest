@@ -12,7 +12,7 @@ public class SeleniumFirefoxExampleTest {
     @Test
     public static void testCallCheese() {
         System.out.println("********************");
-        System.out.println("*   Testing Firefox");
+        System.out.println("*   Begin Testing Firefox");
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
@@ -61,5 +61,10 @@ public class SeleniumFirefoxExampleTest {
 
         //Close the browser
         driver.close();
+        System.out.println("********************");
+        System.out.println("*   End Testing Firefox");
+        System.out.println("********************");
+        System.out.println();
+        System.out.println();
     }
 }
