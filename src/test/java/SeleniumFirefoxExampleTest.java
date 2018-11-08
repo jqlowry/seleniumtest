@@ -3,22 +3,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Selenium2ExampleTest {
+public class SeleniumFirefoxExampleTest {
     @Test
     public static void testCallCheese() {
-        System.out.println("Testing Firefox");
+        System.out.println("********************");
+        System.out.println("*   Testing Firefox");
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
 
         System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
-        System.out.println(System.getProperty("webdriver.gecko.driver"));
+        System.out.println("*   "+System.getProperty("webdriver.gecko.driver"));
+        System.out.println("********************");
 
-        WebDriver driver = new FirefoxDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
+
+        WebDriver driver = new FirefoxDriver(options);
 
         //WebDriver driver = new HtmlUnitDriver();
         // And now use this to visit Google
@@ -36,7 +42,9 @@ public class Selenium2ExampleTest {
         element.submit();
 
         // Check the title of the page
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
 
         // Google's search is rendered dynamically with JavaScript.
         // Wait for the page to load, timeout after 10 seconds
@@ -47,7 +55,9 @@ public class Selenium2ExampleTest {
         });
 
         // Should see: "cheese! - Google Search"
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
 
         //Close the browser
         driver.close();

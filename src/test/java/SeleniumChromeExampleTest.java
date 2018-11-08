@@ -11,13 +11,17 @@ import org.testng.annotations.Test;
 public class SeleniumChromeExampleTest {
     @Test
     public static void testCallJuice() {
-        System.out.println("Testing Chrome");
-        // Create a new instance of the Firefox driver
+        System.out.println("********************");
+        System.out.println("*   Testing Chrome");
+
+        // Create a new instance of the Chrome driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
 
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        System.out.println(System.getProperty("webdriver.chrome.driver"));
+        System.out.println("*   "+System.getProperty("webdriver.chrome.driver"));
+        System.out.println("********************");
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
@@ -29,7 +33,9 @@ public class SeleniumChromeExampleTest {
         // Alternatively the same thing can be done like this
         // driver.navigate().to("http://www.google.com");
         // Check the title of the page
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
 
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
@@ -48,11 +54,13 @@ public class SeleniumChromeExampleTest {
             }
         });
 
-        // Should see: "cheese! - Google Search"
-        System.out.println("Page title is: " + driver.getTitle());
+        // Should see: "juice! - Google Search"
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
 
         //Close the browser
-        driver.close();
+        driver.quit();
 
     }
 }

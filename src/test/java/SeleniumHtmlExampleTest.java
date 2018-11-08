@@ -7,18 +7,22 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class SeleniumHtmlExampleTest {
     @Test
     public static void testCallJuice() {
-        System.out.println("Testing HTML");
-        // Create a new instance of the Firefox driver
+        // turn off htmlunit warnings
+        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
+        java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);
+
+        System.out.println("********************");
+        System.out.println("*   Testing HTML");
+        System.out.println("********************");
+        // Create a new instance of the HTML driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
 
-        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-        //System.out.println(System.getProperty("webdriver.ie.driver"));
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
         WebDriver driver = new HtmlUnitDriver();
 
@@ -28,7 +32,9 @@ public class SeleniumHtmlExampleTest {
         // Alternatively the same thing can be done like this
         // driver.navigate().to("http://www.google.com");
         // Check the title of the page
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
 
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
@@ -48,10 +54,20 @@ public class SeleniumHtmlExampleTest {
         });
 
         // Should see: "cheese! - Google Search"
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
+
+        //Get list of search result strings.
+        List<WebElement> allSearchResults=driver.findElements(By.cssSelector("ol li h3>a"));
+
+        //Iterate the above list to get all the search titles & links from that page.
+        for(WebElement eachResult : allSearchResults) {
+            System.out.println("Title : " + eachResult.getText() + ", Link : " + eachResult.getAttribute("href"));
+        }
 
         //Close the browser
-        driver.close();
+        driver.quit();
 
     }
 }
