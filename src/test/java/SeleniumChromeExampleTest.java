@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class SeleniumChromeExampleTest {
     @Test
-    public static void testCallJuice() {
+    public static void testCallJuice() throws InterruptedException {
         System.out.println("********************");
         System.out.println("*   Begin Testing Chrome");
 
@@ -59,6 +59,15 @@ public class SeleniumChromeExampleTest {
         System.out.println("*   Page title is: " + driver.getTitle());
         System.out.println("********************");
 
+        driver.findElement(By.xpath("//a[@href='https://en.wikipedia.org/wiki/Juice']")).click();
+
+        // Should see: "juice! - Google Search"
+        System.out.println("********************");
+        System.out.println("*   Page title is: " + driver.getTitle());
+        System.out.println("********************");
+
+
+        //Thread.sleep(1000);
         //Close the browser
         driver.quit();
         System.out.println("********************");
