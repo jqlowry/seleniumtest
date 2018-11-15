@@ -22,7 +22,7 @@ public class SeleniumFirefoxExampleTest {
         System.out.println("********************");
 
         FirefoxOptions options = new FirefoxOptions();
-        //options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
+        options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
         WebDriver driver = new FirefoxDriver(options);
 
