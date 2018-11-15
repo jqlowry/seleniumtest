@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SeleniumHtmlExampleTest {
     @Test
-    public static void testCallJuice() {
+    public static void testCallJuice() throws InterruptedException {
         // turn off htmlunit warnings
         java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(java.util.logging.Level.OFF);
         java.util.logging.Logger.getLogger("org.apache.http").setLevel(java.util.logging.Level.OFF);

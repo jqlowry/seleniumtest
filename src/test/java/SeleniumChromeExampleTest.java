@@ -23,7 +23,7 @@ public class SeleniumChromeExampleTest {
         System.out.println("********************");
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
+        //options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
         WebDriver driver = new ChromeDriver(options);
 
@@ -67,7 +67,7 @@ public class SeleniumChromeExampleTest {
         System.out.println("********************");
 
 
-        //Thread.sleep(1000);
+        Thread.sleep(2000);
         //Close the browser
         driver.quit();
         System.out.println("********************");

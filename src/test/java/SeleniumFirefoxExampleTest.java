@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class SeleniumFirefoxExampleTest {
     @Test
-    public static void testCallCheese() {
+    public static void testCallCheese() throws InterruptedException {
         System.out.println("********************");
         System.out.println("*   Begin Testing Firefox");
         // Create a new instance of the Firefox driver
@@ -22,7 +22,7 @@ public class SeleniumFirefoxExampleTest {
         System.out.println("********************");
 
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
+        //options.addArguments("--headless","--no-sandbox","--disable-dev-shm-usage");
 
         WebDriver driver = new FirefoxDriver(options);
 
@@ -59,6 +59,7 @@ public class SeleniumFirefoxExampleTest {
         System.out.println("*   Page title is: " + driver.getTitle());
         System.out.println("********************");
 
+        Thread.sleep(2000);
         //Close the browser
         driver.close();
         System.out.println("********************");
