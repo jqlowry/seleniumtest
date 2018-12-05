@@ -7,7 +7,7 @@ public class ApiTest {
 
     @Test
     public void makeSureThatGoogleIsUp() {
-        Response res = given().when().get("http://localhost:3000/posts");
+        Response res = given().when().get("http://172.17.0.1:3000/posts");
         int code = res.getStatusCode();
 
         if (code == 200){
