@@ -36,7 +36,8 @@
         </dependency>
 
     </dependencies>
-    
+    <build>
+     <plugins>
     <plugin>
              <groupId>org.apache.maven.plugins</groupId>
              <artifactid>maven-surefire-plugin</artifactid>
@@ -46,5 +47,7 @@
                       <argLine>-Xmx1024m-XX:MaxPermSize=256m</argLine>
              </configuration>
          </plugin>
+              </plugins>
+                       </build>
 
 </project>
