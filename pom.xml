@@ -36,7 +36,15 @@
         </dependency>
 
     </dependencies>
-
-
+    
+    <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactid>maven-surefire-plugin</artifactid>
+             <configuration>
+                      <forkCount>3</forkCount>
+                      <reuseForks>true</reuseForks>
+                      <argLine>-Xmx1024m-XX:MaxPermSize=256m</argLine>
+             </configuration>
+         </plugin>
 
 </project>
